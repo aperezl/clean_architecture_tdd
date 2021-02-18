@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/aperezl/clean_architecture_tdd/issues"
   },
-  "homepage": "https://github.com/aperezl/clean_architecture_tdd#readme"
+  "homepage": "https://github.com/aperezl/clean_architecture_tdd#readme",
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
 }
