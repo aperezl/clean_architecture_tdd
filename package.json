@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint-staged": "npx lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aperezl/clean_architecture_tdd.git"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -18,6 +24,8 @@
   },
   "homepage": "https://github.com/aperezl/clean_architecture_tdd#readme",
   "devDependencies": {
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
     "standard": "^16.0.3"
   }
 }
