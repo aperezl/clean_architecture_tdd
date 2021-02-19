@@ -1,5 +1,6 @@
 import MissingParamError from './MissingParamError'
-import UnauthorizedError from './unauthorizedError'
+import ServerError from './ServerError'
+import UnauthorizedError from './UnauthorizedError'
 
 export default class HttpResponse {
   static badRequest (paramName) {
@@ -12,7 +13,7 @@ export default class HttpResponse {
   static serverError (paramName) {
     return {
       statusCode: 500,
-      body: new MissingParamError(paramName)
+      body: new ServerError()
     }
   }
 
