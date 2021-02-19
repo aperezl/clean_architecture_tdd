@@ -1,6 +1,6 @@
-const HttpResponse = require('../helpers/HttpResponse')
+import HttpResponse from '../helpers/HttpResponse'
 
-module.exports = class LoginRouter {
+export default class LoginRouter {
   constructor (authUseCase) {
     this.authUseCase = authUseCase
   }

@@ -1,7 +1,7 @@
-const MissingParamError = require('./MissingParamError')
-const UnauthorizedError = require('./unauthorizedError')
+import MissingParamError from './MissingParamError'
+import UnauthorizedError from './unauthorizedError'
 
-module.exports = class HttpResponse {
+export default class HttpResponse {
   static badRequest (paramName) {
     return {
       statusCode: 400,
