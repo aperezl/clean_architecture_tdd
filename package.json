@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "husky install",
     "start": "node -r esm src/presentation/routers/LoginRouter.js",
     "lint-staged": "npx lint-staged",
     "test": "jest --watchAll --silent --colors --noStackTrace",
-    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace"
+    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace",
+    "test:ci": "jest --coverage"
   },
   "repository": {
     "type": "git",
