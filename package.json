@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node -r esm src/presentation/routers/LoginRouter.js",
     "lint-staged": "npx lint-staged",
-    "test": "jest",
-    "test:staged": "jest --passWithNoTests"
+    "test": "jest --watchAll --silent --colors --noStackTrace",
+    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace"
   },
   "repository": {
     "type": "git",
