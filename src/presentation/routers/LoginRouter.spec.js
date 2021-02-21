@@ -1,7 +1,4 @@
-import InvalidParamError from '../helpers/InvalidParamError'
-import MissingParamError from '../helpers/MissingParamError'
-import ServerError from '../helpers/ServerError'
-import UnauthorizedError from '../helpers/UnauthorizedError'
+import { InvalidParamError, MissingParamError, ServerError, UnauthorizedError } from '../errors'
 import LoginRouter from './LoginRouter'
 
 const makeSut = () => {

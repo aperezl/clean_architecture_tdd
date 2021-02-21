@@ -1,6 +1,5 @@
+import { InvalidParamError, MissingParamError } from '../errors'
 import HttpResponse from '../helpers/HttpResponse'
-import InvalidParamError from '../helpers/InvalidParamError'
-import MissingParamError from '../helpers/MissingParamError'
 
 export default class LoginRouter {
   constructor (authUseCase, emailValidator) {
