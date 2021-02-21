@@ -7,7 +7,7 @@
     "postinstall": "husky install",
     "start": "node -r esm src/presentation/routers/LoginRouter.js",
     "lint-staged": "npx lint-staged",
-    "test": "jest --noStackTrace --passWithNoTests",
+    "test": "jest --silent --noStackTrace --passWithNoTests",
     "test:unit": "npm test -- --watch -c jest-unit.config.js",
     "test:integration": "npm test -- --watch -c jest-integration.config.js",
     "test:staged": "npm test -- --findRelatedTests",
