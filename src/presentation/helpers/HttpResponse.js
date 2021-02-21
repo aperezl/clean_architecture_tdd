@@ -29,11 +29,4 @@ export default class HttpResponse {
       body: data
     }
   }
-
-  static InvalidParamError () {
-    return {
-      statusCode: 401,
-      body: new UnauthorizedError()
-    }
-  }
 }
