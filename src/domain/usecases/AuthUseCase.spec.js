@@ -1,4 +1,4 @@
-import { InvalidParamError, MissingParamError } from '../../utils/errors'
+import { MissingParamError } from '../../utils/errors'
 import AuthUseCase from './AuthUseCase'
 
 const makeSut = () => {
@@ -37,13 +37,13 @@ describe('Auth UseCase', () => {
   test('should throw if no LoadUserRepository is provided', async () => {
     const sut = new AuthUseCase()
     const promise = sut.auth('any_email@mail.com', 'any_password')
-    expect(promise).rejects.toThrow(new MissingParamError('loadUserByEmailRepository'))
+    expect(promise).rejects.toThrow()
   })
 
   test('should throw if LoadUserRepository has no load method', async () => {
     const sut = new AuthUseCase({})
     const promise = sut.auth('any_email@mail.com', 'any_password')
-    expect(promise).rejects.toThrow(new InvalidParamError('loadUserByEmailRepository'))
+    expect(promise).rejects.toThrow()
   })
 
   test('should return null if LoadUserRepository return null', async () => {
