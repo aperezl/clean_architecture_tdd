@@ -18,7 +18,10 @@ export default class AuthUseCase {
     if (!user) {
       return null
     }
-    await this.encrypter.compare(password, user.password)
-    return null
+    const isValid = await this.encrypter.compare(password, user.password)
+    if (!isValid) {
+      return null
+    }
+    return isValid
   }
 }
