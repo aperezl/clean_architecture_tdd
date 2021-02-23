@@ -1,11 +1,6 @@
 import bcrypt from 'bcrypt'
 
-class Encrypter {
-  async compare (value, hash) {
-    const isValid = await bcrypt.compare(value, hash)
-    return isValid
-  }
-}
+import Encrypter from './Encrypter'
 
 const makeSut = () => {
   return new Encrypter()
