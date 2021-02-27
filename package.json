@@ -2,10 +2,10 @@
   "name": "clean_architecture_tdd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main/index.js",
   "scripts": {
     "postinstall": "husky install",
-    "start": "node -r esm src/presentation/routers/LoginRouter.js",
+    "start": "node -r esm src/main/index.js",
     "lint-staged": "npx lint-staged",
     "test": "jest --noStackTrace --passWithNoTests",
     "test:unit": "npm test -- --watch -c jest-unit.config.js",
@@ -47,6 +47,8 @@
   "dependencies": {
     "@shelf/jest-mongodb": "^1.2.3",
     "bcrypt": "^5.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.4",
     "validator": "^13.5.2"
