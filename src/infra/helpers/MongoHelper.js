@@ -19,7 +19,7 @@ export default {
 
   async getDb () {
     if (!this.connection || !this.connection.isConnected()) {
-      await this.connect(this.uri, this.dbName)
+      await this.connect(this.uri)
     }
     return this.db
   }

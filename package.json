@@ -7,7 +7,7 @@
     "postinstall": "husky install",
     "start": "node -r esm src/main/index.js",
     "lint-staged": "npx lint-staged",
-    "test": "jest --noStackTrace --passWithNoTests",
+    "test": "jest --noStackTrace --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit.config.js",
     "test:integration": "npm test -- --watch -c jest-integration.config.js",
     "test:staged": "npm test -- --findRelatedTests --silent",
