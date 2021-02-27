@@ -1,6 +1,6 @@
 import { MissingParamError } from '../../utils/errors'
 
-export default class UpdateAccessToken {
+export default class UpdateAccessTokenRepository {
   constructor (userModel) {
     this.userModel = userModel
   }
