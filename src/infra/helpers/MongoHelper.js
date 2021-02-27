@@ -13,10 +13,12 @@ export default {
 
   async disconnect () {
     await this.connection.close()
+    this.connection = null
+    this.db = null
   },
 
   async getDb () {
-    if (!this.connection.isConnected()) {
+    if (!this.connection || !this.connection.isConnected()) {
       await this.connect(this.uri, this.dbName)
     }
     return this.db
