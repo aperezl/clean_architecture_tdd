@@ -8,7 +8,7 @@ export default {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
-    this.db = await this.connection.db(dbName)
+    this.db = this.connection.db(dbName)
   },
 
   async disconnect () {

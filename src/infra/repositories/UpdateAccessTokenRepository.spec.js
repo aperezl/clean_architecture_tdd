@@ -39,8 +39,8 @@ describe('UpdateAccessToken Repository', () => {
 
   test('should update the user with the given accessToken', async () => {
     const { sut, userModel } = makeSut()
-    sut.update(fakeUserId, 'valid_token')
-    const updatedFakeUser = await userModel.findOne()
+    await sut.update(fakeUserId, 'valid_token')
+    const updatedFakeUser = await userModel.findOne({ _id: fakeUserId })
     expect(updatedFakeUser.accessToken).toBe('valid_token')
   })
 
