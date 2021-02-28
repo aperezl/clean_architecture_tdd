@@ -1,7 +1,7 @@
 module.exports = {
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
-  collectCoverageFrom: ['**/src/**/*.js'],
+  collectCoverageFrom: ['**/src/**/*.js', '!**/src/main/**'],
   transform: {
     '\\.[jt]sx?$': 'babel-jest'
   },
