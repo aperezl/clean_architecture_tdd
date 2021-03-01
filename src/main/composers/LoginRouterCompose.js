@@ -7,17 +7,19 @@ import Encrypter from '../../utils/helpers/Encrypter'
 import TokenGenerator from '../../utils/helpers/TokenGenerator'
 import env from '../config/env'
 
-const tokenGenerator = new TokenGenerator(env.tokekSecret)
-const encrypter = new Encrypter()
-const loadUserByEmailRepository = new LoadUserByEmailRepository()
-const updateAccessTokenRepository = new UpdateAccessTokenRepository()
-const emailValidator = new EmailValidator()
-const authUseCase = new AuthUseCase({
-  loadUserByEmailRepository,
-  updateAccessTokenRepository,
-  encrypter,
-  tokenGenerator
-})
-const loginRouter = new LoginRouter({ authUseCase, emailValidator })
-
-export default loginRouter
+export default class LoginRouterCompose {
+  static compose () {
+    const tokenGenerator = new TokenGenerator(env.tokekSecret)
+    const encrypter = new Encrypter()
+    const loadUserByEmailRepository = new LoadUserByEmailRepository()
+    const updateAccessTokenRepository = new UpdateAccessTokenRepository()
+    const emailValidator = new EmailValidator()
+    const authUseCase = new AuthUseCase({
+      loadUserByEmailRepository,
+      updateAccessTokenRepository,
+      encrypter,
+      tokenGenerator
+    })
+    return new LoginRouter({ authUseCase, emailValidator })
+  }
+}
