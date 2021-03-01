@@ -1,14 +1,13 @@
 import { MongoClient } from 'mongodb'
 
 export default {
-  async connect (uri, dbName) {
+  async connect (uri) {
     this.uri = uri
-    this.dbName = dbName
     this.connection = await MongoClient.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
-    this.db = this.connection.db(dbName)
+    this.db = this.connection.db()
   },
 
   async disconnect () {
