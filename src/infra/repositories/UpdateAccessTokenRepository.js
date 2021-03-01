@@ -1,10 +1,7 @@
 import { MissingParamError } from '../../utils/errors'
+import MongoHelper from '../helpers/MongoHelper'
 
 export default class UpdateAccessTokenRepository {
-  constructor (userModel) {
-    this.userModel = userModel
-  }
-
   async update (userId, accessToken) {
     if (!userId) {
       throw new MissingParamError('userId')
@@ -12,7 +9,8 @@ export default class UpdateAccessTokenRepository {
     if (!accessToken) {
       throw new MissingParamError('accessToken')
     }
-    await this.userModel.updateOne({
+    const db = await MongoHelper.getDb()
+    await db.collection('users').updateOne({
       _id: userId
     }, {
       $set: {
