@@ -1,11 +1,11 @@
 import AuthUseCase from '../../domain/usecases/AuthUseCase'
 import LoadUserByEmailRepository from '../../infra/repositories/LoadUserByEmailRepository'
 import UpdateAccessTokenRepository from '../../infra/repositories/UpdateAccessTokenRepository'
-import env from '../../main/config/env'
 import LoginRouter from '../../presentation/routers/LoginRouter'
 import EmailValidator from '../../utils/helpers/EmailValidator'
 import Encrypter from '../../utils/helpers/Encrypter'
 import TokenGenerator from '../../utils/helpers/TokenGenerator'
+import env from '../config/env'
 
 const tokenGenerator = new TokenGenerator(env.tokekSecret)
 const encrypter = new Encrypter()
