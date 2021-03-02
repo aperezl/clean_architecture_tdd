@@ -2,11 +2,26 @@ import { InvalidParamError, MissingParamError } from '../../utils/errors'
 import HttpResponse from '../helpers/HttpResponse'
 
 export default class LoginRouter {
+  /**
+   * LoginRouter
+   *
+   * @export
+   * @class LoginRouter
+   *
+   * @param {*} [{ authUseCase, emailValidator }={}]
+   */
   constructor ({ authUseCase, emailValidator } = {}) {
     this.authUseCase = authUseCase
     this.emailValidator = emailValidator
   }
 
+  /**
+   * route
+   *
+   * @param {string} httpRequest
+   * @returns string
+   * @memberof LoginRouter
+   */
   async route (httpRequest) {
     try {
       const { email, password } = httpRequest.body
